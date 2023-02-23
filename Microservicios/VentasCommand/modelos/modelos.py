@@ -22,17 +22,17 @@ class TipoDocumento(Enum):
 
 
 class Vendedor(db.Model):
-    id = db.Column(db.Intger, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(128))
     apellido = db.Column(db.String(128))
     tipo_documento = db.Column(db.Enum(TipoDocumento))
     numero_documento = db.Column(db.String(32))
     telefono = db.Column(db.String(16))
-    ventas = db.relationship('Venta', cascade='all, delete, delete-orphan', back_populates="venta")
+    ventas = db.relationship('Venta', cascade='all, delete, delete-orphan')
 
 
 class Venta(db.Model):
-    id = db.Column(db.Intger, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     producto = db.Column(db.String(128))
     cantidad = db.Column(db.Integer)
     cliente = db.Column(db.String(64))

@@ -18,25 +18,29 @@ class VistaVendedor(Resource):
         nuevo_vendedor = Vendedor(
             nombre=request.json['nombre'],
             apellido=request.json['apellido'],
-            tipo_documento=int(request.json['tipo_documento']),
+            tipo_documento=request.json['tipo_documento'],
             numero_documento=request.json['numero_documento'],
             telefono=request.json['telefono']
         )
         db.session.add(nuevo_vendedor)
         db.session.commit()
-        return 'Vendedor creado exitosamente', 200
+        return {
+            'vendedor': vendedor_schema.dumps(nuevo_vendedor),
+            'message': 'Vendedor creado exitosamente' }, 200
 
     def put(self, id_vendedor):
         vendedor = Vendedor.query.get_or_404(id_vendedor)
         vendedor.nombre = request.json['nombre']
         vendedor.apellido = request.json['apellido']
-        vendedor.tipo_documento = int(request.json['tipo_documento'])
+        vendedor.tipo_documento = request.json['tipo_documento']
         vendedor.numero_documento = request.json['numero_documento']
         vendedor.telefono = request.json['telefono']
 
         db.session.add(vendedor)
         db.session.commit()
-        return 'Vendedor Editado', 200
+        return {
+            'Vendedor': vendedor_schema.dumps(vendedor),
+            'message': 'Vendedor Editado'}, 200
 
     def delete(self, id_vendedor):
         vendedor = Vendedor.query.get_or_404(id_vendedor)
