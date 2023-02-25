@@ -16,6 +16,7 @@ with app.app_context():
             monitoreo("http://127.0.0.1:5001/ventas", "principal")
             monitoreo("http://127.0.0.1:5002/ventas", "redundante 1")
             monitoreo("http://127.0.0.1:5003/ventas", "redundante 2")
+            monitoreo("http://127.0.0.1:5004/prueba", "principal-comandos")
 
         except KeyboardInterrupt:
             print("Stopping ICMP monitoring...")

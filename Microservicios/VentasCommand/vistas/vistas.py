@@ -64,7 +64,7 @@ class VistaVenta(Resource):
         vendedor.ventas.append(nueva_venta)
         db.session.add(nueva_venta)
         db.session.add(vendedor)
-        db.commit()
+        db.session.commit()
         return '', 200
 
     def put(self, id_venta):
