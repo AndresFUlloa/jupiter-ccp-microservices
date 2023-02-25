@@ -1,3 +1,4 @@
 Microservicios/VentasCommand/venv
 
 *.sqlite
+__pycache__/
