@@ -8,7 +8,7 @@ from flask_jwt_extended import JWTManager
 from flask_restful import Api
 
 from modelos import db
-from vistas import VistaVenta, VistaVendedor
+from vistas import VistaVenta, VistaVendedor, VistaPruebas
 
 
 app = Flask(__name__)
@@ -28,3 +28,4 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 api = Api(app)
 api.add_resource(VistaVenta, '/venta/<int:id_venta>', '/venta/<int:id_vendedor>')
 api.add_resource(VistaVendedor, '/vendedor', '/vendedor/<int:id_vendedor>')
+api.add_resource(VistaPruebas, '/prueba')

@@ -5,11 +5,13 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 from datetime import datetime
+from faker import Faker
 
 from modelos import *
 
 vendedor_schema = VendedorSchema()
 venta_schema = VendedorSchema()
+data_factory = Faker()
 
 
 class VistaVendedor(Resource):
@@ -80,3 +82,31 @@ class VistaVenta(Resource):
         db.session.delete(venta)
         db.session.commit()
         return '', 200
+
+
+class VistaPruebas(Resource):
+
+    def get(self):
+        nuevo_vendedor = Vendedor(
+            nombre=data_factory.name(),
+            apellido=data_factory.last_name(),
+            tipo_documento=TipoDocumento.CEDULA,
+            numero_documento=str(data_factory.pyint(min_value=1000000000, max_value=9999999999)),
+            telefono=str(data_factory.pyint(min_value=1000000000, max_value=9999999999))
+        )
+        db.session.add(nuevo_vendedor)
+        db.session.commit()
+
+        nueva_venta = Venta(
+            producto=data_factory.word(),
+            cantidad=data_factory.pyint(min_value=1, max_value=5000),
+            cliente='{} {}'.format(data_factory.name(), data_factory.last_name()),
+            vendedor=nuevo_vendedor.id
+        )
+        db.session.add(nueva_venta)
+        db.session.commit()
+
+        db.session.delete(nueva_venta)
+        db.session.delete(nuevo_vendedor)
+        return 'Prueba Exitosa', 200
+    
