@@ -13,9 +13,11 @@ with app.app_context():
     #print(verbose_ping('http://0.0.0.0:5001/ventas', count=0, interval=1))
     while True:
         try:
+            print("**************Consultas*****************************************")
             monitoreo("http://127.0.0.1:5001/ventas", "principal")
             monitoreo("http://127.0.0.1:5002/ventas", "redundante 1")
             monitoreo("http://127.0.0.1:5003/ventas", "redundante 2")
+            print("++++++++++++++++++++Comandos+++++++++++++++++++++++++++++++++++++")
             monitoreo("http://127.0.0.1:5004/prueba", "principal-comandos")
 
         except KeyboardInterrupt:

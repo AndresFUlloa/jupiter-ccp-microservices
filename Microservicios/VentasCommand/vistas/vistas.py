@@ -108,5 +108,6 @@ class VistaPruebas(Resource):
 
         db.session.delete(nueva_venta)
         db.session.delete(nuevo_vendedor)
+        db.session.commit()
         return 'Prueba Exitosa', 200
     
