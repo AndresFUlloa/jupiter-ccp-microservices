@@ -1,0 +1,5 @@
+Inicio Log
+[22:44:25]: Server: http://127.0.0.1:5001/ventas is down
+[22:44:40]: Server: http://127.0.0.1:5002/ventas is down
+[22:44:54]: Server: http://127.0.0.1:5002 is up
+[22:45:09]: Server: http://127.0.0.1:5001 is up

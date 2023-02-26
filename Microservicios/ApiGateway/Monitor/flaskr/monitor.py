@@ -7,7 +7,7 @@ import time
 from typing import Tuple
 import json
 from requests import get, exceptions, post
-from log_utils import LogUtils
+from .log_utils import LogUtils
 
 servidor1_down = False
 servidor2_down = False
@@ -40,9 +40,10 @@ def monitoreo(target: str, tipo:str):
 
         print("El microservicio {} en linea...codigo:".format(tipo), respuesta.status_code)
     except exceptions.ConnectionError:
+        if target == (current_url + "/ventas"):
+            LogUtils.write_message('Server: {} is down'.format(target))
         print("El microservicio {} esta fuera de servicio, codigo: 400".format(tipo))
-        LogUtils.write_message('Server: {} is down'.format(tipo))
-        # le comunicamos al API Gateway que no use mas este microservicio porque esta abajo
+       # le comunicamos al API Gateway que no use mas este microservicio porque esta abajo
         lista_url = None
         if not servidor1_down and tipo == 'principal':
             servidor1_down = True
