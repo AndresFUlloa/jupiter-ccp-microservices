@@ -9,20 +9,29 @@ import json
 from requests import get, exceptions, post
 servidor1_down = False
 servidor2_down = False
+current_url = 'http://127.0.0.1:5001'
+
 # Monitor de microservicios a traves de request
 def monitoreo(target: str, tipo:str):
     global servidor1_down
     global servidor2_down
+    global current_url
+
     try:
         respuesta=get(target, timeout=3)
+
         lista_url = None
         if servidor1_down and tipo == 'principal':
             servidor1_down = False
-            lista_url = {'new_url': 'http://127.0.0.1:5001'}
+            if current_url != 'http://127.0.0.1:5001':
+                current_url = 'http://127.0.0.1:5001'
+                lista_url = {'new_url': current_url}
         elif servidor2_down and tipo == 'redundante 1':
             servidor2_down = False
-            if servidor1_down:
-                lista_url = {'new_url': 'http://127.0.0.1:5002'}
+            if current_url == 'http://127.0.0.1:5003':
+                current_url = 'http://127.0.0.1:5002'
+                lista_url = {'new_url': current_url}
+
         if lista_url is not None:
             response = post('http://127.0.0.1:5006/api/new_url', data=json.dumps(lista_url))
         print("El microservicio {} en linea...codigo:".format(tipo), respuesta.status_code)
@@ -32,10 +41,18 @@ def monitoreo(target: str, tipo:str):
         lista_url = None
         if not servidor1_down and tipo == 'principal':
             servidor1_down = True
-            lista_url = {'new_url': 'http://127.0.0.1:5002'}
+            if current_url == 'http://127.0.0.1:5001':
+                if not servidor2_down:
+                    current_url = 'http://127.0.0.1:5002'
+                    lista_url = {'new_url': current_url}
+                else:
+                    current_url = 'http://127.0.0.1:5003'
+                    lista_url = {'new_url': current_url}
         elif not servidor2_down and tipo == 'redundante 1':
             servidor2_down = True
             if servidor1_down:
-                lista_url = {'new_url': 'http://127.0.0.1:5003'}
+                current_url = 'http://127.0.0.1:5003'
+                lista_url = {'new_url': current_url}
+
         if lista_url is not None:
             response = post('http://127.0.0.1:5006/api/new_url', data=json.dumps(lista_url))
