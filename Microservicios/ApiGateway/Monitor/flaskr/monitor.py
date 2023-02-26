@@ -7,6 +7,8 @@ import time
 from typing import Tuple
 import json
 from requests import get, exceptions, post
+from log_utils import LogUtils
+
 servidor1_down = False
 servidor2_down = False
 current_url = 'http://127.0.0.1:5001'
@@ -34,9 +36,12 @@ def monitoreo(target: str, tipo:str):
 
         if lista_url is not None:
             response = post('http://127.0.0.1:5006/api/new_url', data=json.dumps(lista_url))
+            LogUtils.write_message('Server: {} is up'.format(current_url))
+
         print("El microservicio {} en linea...codigo:".format(tipo), respuesta.status_code)
     except exceptions.ConnectionError:
         print("El microservicio {} esta fuera de servicio, codigo: 400".format(tipo))
+        LogUtils.write_message('Server: {} is down'.format(tipo))
         # le comunicamos al API Gateway que no use mas este microservicio porque esta abajo
         lista_url = None
         if not servidor1_down and tipo == 'principal':
@@ -56,3 +61,4 @@ def monitoreo(target: str, tipo:str):
 
         if lista_url is not None:
             response = post('http://127.0.0.1:5006/api/new_url', data=json.dumps(lista_url))
+
