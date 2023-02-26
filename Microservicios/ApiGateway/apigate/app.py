@@ -40,6 +40,7 @@ def api_gateway(path):
 # Cambio de URL segun el estado del microservicio
 @app.route('/api/new_url', methods=['POST'])
 def valid_URL():
+    global URL
     data = request.get_data()
     data_str = data.decode('utf-8')
     data_dict = json.loads(data_str)
@@ -49,3 +50,4 @@ def valid_URL():
 
 if __name__ == '__main__':
     app.run()
+

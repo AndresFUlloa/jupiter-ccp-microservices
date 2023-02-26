@@ -3,7 +3,8 @@ from .modelos import db, Venta, Vendedor, TipoDocumento
 from .modelos import VentaSchema, VendedorSchema
 from flask_restful import Api
 from .vistas import VistaVenta, VistaVentas
-
+from flask import request
+from flask import Flask
 
 app = create_app('default')
 app_context = app.app_context()
@@ -16,6 +17,15 @@ api = Api(app)
 api.add_resource(VistaVentas, '/ventas')
 api.add_resource(VistaVenta, '/venta/<int:id_venta>')
 
+@app.route('/shutdown', methods=['POST'])
+def shutdown():
+    shutdown_server()
+    return 'Server shutting down...'
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug server')
+    func()
 """
 #prueba
 with app.app_context():
