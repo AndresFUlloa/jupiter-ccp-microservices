@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 import requests
+import json
+
 
 app = Flask(__name__)
 
-PORT = 5006
-HOST = '127.0.0.1'
 
 # URL microservicio consulta principal
 URL = "http://127.0.0.1:5001"
@@ -40,8 +40,12 @@ def api_gateway(path):
 # Cambio de URL segun el estado del microservicio
 @app.route('/api/new_url', methods=['POST'])
 def valid_URL():
-    URL = dict(request.get_data())['new_url']
+    data = request.get_data()
+    data_str = data.decode('utf-8')
+    data_dict = json.loads(data_str)
+    URL = data_dict['new_url']
+    print("El microservicio de consulta activo es el: " + URL)
     return "", 200
 
 if __name__ == '__main__':
-    app.run(host=HOST, port=PORT)
+    app.run()
