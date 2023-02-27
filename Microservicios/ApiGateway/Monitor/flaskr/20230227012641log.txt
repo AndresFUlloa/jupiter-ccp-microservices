@@ -1,0 +1,184 @@
+Inicio Log
+[01:26:51]: Server: http://127.0.0.1:5001/ventas is down
+[01:26:51]: Se cambio al servidor: http://127.0.0.1:5002
+[01:27:10]: Server: http://127.0.0.1:5002/ventas is down
+[01:27:10]: Se cambio al servidor: http://127.0.0.1:5003
+[01:27:36]: Server: http://127.0.0.1:5001/ventas is up
+[01:27:36]: Se cambio el servidor: http://127.0.0.1:5001
+[01:27:44]: Server: http://127.0.0.1:5003/ventas is down
+[01:27:53]: Server: http://127.0.0.1:5002/ventas is up
+[01:28:09]: Server: http://127.0.0.1:5003/ventas is up
+[01:28:22]: Server: http://127.0.0.1:5001/ventas is down
+[01:28:22]: Se cambio al servidor: http://127.0.0.1:5002
+[01:28:44]: Server: http://127.0.0.1:5002/ventas is down
+[01:28:44]: Se cambio al servidor: http://127.0.0.1:5003
+[01:28:47]: Server: http://127.0.0.1:5001/ventas is up
+[01:28:47]: Se cambio el servidor: http://127.0.0.1:5001
+[01:28:55]: Server: http://127.0.0.1:5003/ventas is down
+[01:29:15]: Server: http://127.0.0.1:5002/ventas is up
+[01:29:25]: Server: http://127.0.0.1:5001/ventas is down
+[01:29:25]: Se cambio al servidor: http://127.0.0.1:5002
+[01:29:31]: Server: http://127.0.0.1:5003/ventas is up
+[01:30:11]: Server: http://127.0.0.1:5003/ventas is down
+[01:30:14]: Server: http://127.0.0.1:5001/ventas is up
+[01:30:14]: Se cambio el servidor: http://127.0.0.1:5001
+[01:30:57]: Server: http://127.0.0.1:5002/ventas is down
+[01:31:44]: Server: http://127.0.0.1:5002/ventas is up
+[01:31:57]: Server: http://127.0.0.1:5003/ventas is up
+[01:32:06]: Server: http://127.0.0.1:5001/ventas is down
+[01:32:06]: Se cambio al servidor: http://127.0.0.1:5002
+[01:32:41]: Server: http://127.0.0.1:5003/ventas is down
+[01:32:49]: Server: http://127.0.0.1:5001/ventas is up
+[01:32:49]: Se cambio el servidor: http://127.0.0.1:5001
+[01:33:01]: Server: http://127.0.0.1:5003/ventas is up
+[01:33:51]: Server: http://127.0.0.1:5002/ventas is down
+[01:34:00]: Server: http://127.0.0.1:5001/ventas is down
+[01:34:00]: Se cambio al servidor: http://127.0.0.1:5003
+[01:34:30]: Server: http://127.0.0.1:5002/ventas is up
+[01:34:30]: Se cambio el servidor: http://127.0.0.1:5002
+[01:34:41]: Server: http://127.0.0.1:5003/ventas is down
+[01:35:46]: Server: http://127.0.0.1:5001/ventas is up
+[01:35:46]: Se cambio el servidor: http://127.0.0.1:5001
+[01:36:49]: Server: http://127.0.0.1:5003/ventas is up
+[01:36:59]: Server: http://127.0.0.1:5002/ventas is down
+[01:37:47]: Server: http://127.0.0.1:5002/ventas is up
+[01:37:53]: Server: http://127.0.0.1:5001/ventas is down
+[01:37:53]: Se cambio al servidor: http://127.0.0.1:5002
+[01:37:59]: Server: http://127.0.0.1:5003/ventas is down
+[01:38:13]: Server: http://127.0.0.1:5001/ventas is up
+[01:38:13]: Se cambio el servidor: http://127.0.0.1:5001
+[01:38:18]: Server: http://127.0.0.1:5003/ventas is up
+[01:38:22]: Server: http://127.0.0.1:5002/ventas is down
+[01:38:47]: Server: http://127.0.0.1:5002/ventas is up
+[01:38:53]: Server: http://127.0.0.1:5001/ventas is down
+[01:38:53]: Se cambio al servidor: http://127.0.0.1:5002
+[01:39:40]: Server: http://127.0.0.1:5002/ventas is down
+[01:39:40]: Se cambio al servidor: http://127.0.0.1:5003
+[01:39:56]: Server: http://127.0.0.1:5002/ventas is up
+[01:39:56]: Se cambio el servidor: http://127.0.0.1:5002
+[01:40:31]: Server: http://127.0.0.1:5001/ventas is up
+[01:40:31]: Se cambio el servidor: http://127.0.0.1:5001
+[01:41:06]: Server: http://127.0.0.1:5003/ventas is down
+[01:41:51]: Server: http://127.0.0.1:5001/ventas is down
+[01:41:51]: Se cambio al servidor: http://127.0.0.1:5002
+[01:41:58]: Server: http://127.0.0.1:5003/ventas is up
+[01:42:16]: Server: http://127.0.0.1:5002/ventas is down
+[01:42:16]: Se cambio al servidor: http://127.0.0.1:5003
+[01:42:31]: Server: http://127.0.0.1:5001/ventas is up
+[01:42:31]: Se cambio el servidor: http://127.0.0.1:5001
+[01:42:39]: Server: http://127.0.0.1:5003/ventas is down
+[01:42:48]: Server: http://127.0.0.1:5002/ventas is up
+[01:43:13]: Server: http://127.0.0.1:5003/ventas is up
+[01:43:23]: Server: http://127.0.0.1:5001/ventas is down
+[01:43:23]: Se cambio al servidor: http://127.0.0.1:5002
+[01:43:33]: Server: http://127.0.0.1:5002/ventas is down
+[01:43:33]: Se cambio al servidor: http://127.0.0.1:5003
+[01:43:50]: Server: http://127.0.0.1:5002/ventas is up
+[01:43:50]: Se cambio el servidor: http://127.0.0.1:5002
+[01:44:14]: Server: http://127.0.0.1:5001/ventas is up
+[01:44:14]: Se cambio el servidor: http://127.0.0.1:5001
+[01:44:45]: Server: http://127.0.0.1:5002/ventas is down
+[01:44:56]: Server: http://127.0.0.1:5003/ventas is down
+[01:45:18]: Server: http://127.0.0.1:5003/ventas is up
+[01:45:22]: Server: http://127.0.0.1:5001/ventas is down
+[01:45:22]: Se cambio al servidor: http://127.0.0.1:5003
+[01:45:28]: Server: http://127.0.0.1:5002/ventas is up
+[01:45:28]: Se cambio el servidor: http://127.0.0.1:5002
+[01:46:09]: Server: http://127.0.0.1:5001/ventas is up
+[01:46:09]: Se cambio el servidor: http://127.0.0.1:5001
+[01:46:17]: Server: http://127.0.0.1:5003/ventas is down
+[01:46:41]: Server: http://127.0.0.1:5002/ventas is down
+[01:47:06]: Server: http://127.0.0.1:5003/ventas is up
+[01:47:22]: Server: http://127.0.0.1:5001/ventas is down
+[01:47:22]: Se cambio al servidor: http://127.0.0.1:5003
+[01:47:36]: Server: http://127.0.0.1:5002/ventas is up
+[01:47:36]: Se cambio el servidor: http://127.0.0.1:5002
+[01:48:06]: Server: http://127.0.0.1:5002/ventas is down
+[01:48:06]: Se cambio al servidor: http://127.0.0.1:5003
+[01:48:21]: Server: http://127.0.0.1:5001/ventas is up
+[01:48:21]: Se cambio el servidor: http://127.0.0.1:5001
+[01:48:50]: Server: http://127.0.0.1:5002/ventas is up
+[01:48:58]: Server: http://127.0.0.1:5001/ventas is down
+[01:48:58]: Se cambio al servidor: http://127.0.0.1:5002
+[01:49:20]: Server: http://127.0.0.1:5003/ventas is down
+[01:49:35]: Server: http://127.0.0.1:5001/ventas is up
+[01:49:35]: Se cambio el servidor: http://127.0.0.1:5001
+[01:49:43]: Server: http://127.0.0.1:5003/ventas is up
+[01:50:04]: Server: http://127.0.0.1:5002/ventas is down
+[01:50:06]: Server: http://127.0.0.1:5003/ventas is down
+[01:50:29]: Server: http://127.0.0.1:5003/ventas is up
+[01:50:45]: Server: http://127.0.0.1:5001/ventas is down
+[01:50:45]: Se cambio al servidor: http://127.0.0.1:5003
+[01:51:28]: Server: http://127.0.0.1:5002/ventas is up
+[01:51:28]: Se cambio el servidor: http://127.0.0.1:5002
+[01:51:38]: Server: http://127.0.0.1:5003/ventas is down
+[01:52:11]: Server: http://127.0.0.1:5001/ventas is up
+[01:52:11]: Se cambio el servidor: http://127.0.0.1:5001
+[01:53:10]: Server: http://127.0.0.1:5003/ventas is up
+[01:53:16]: Server: http://127.0.0.1:5001/ventas is down
+[01:53:16]: Se cambio al servidor: http://127.0.0.1:5002
+[01:53:38]: Server: http://127.0.0.1:5002/ventas is down
+[01:53:38]: Se cambio al servidor: http://127.0.0.1:5003
+[01:54:17]: Server: http://127.0.0.1:5001/ventas is up
+[01:54:17]: Se cambio el servidor: http://127.0.0.1:5001
+[01:54:42]: Server: http://127.0.0.1:5002/ventas is up
+[01:54:50]: Server: http://127.0.0.1:5003/ventas is down
+[01:55:31]: Server: http://127.0.0.1:5001/ventas is down
+[01:55:31]: Se cambio al servidor: http://127.0.0.1:5002
+[01:55:31]: Server: http://127.0.0.1:5003/ventas is up
+[01:55:54]: Server: http://127.0.0.1:5002/ventas is down
+[01:55:54]: Se cambio al servidor: http://127.0.0.1:5003
+[01:56:14]: Server: http://127.0.0.1:5001/ventas is up
+[01:56:14]: Se cambio el servidor: http://127.0.0.1:5001
+[01:56:22]: Server: http://127.0.0.1:5003/ventas is down
+[01:56:24]: Server: http://127.0.0.1:5002/ventas is up
+[01:56:37]: Server: http://127.0.0.1:5003/ventas is up
+[01:57:04]: Server: http://127.0.0.1:5002/ventas is down
+[01:57:30]: Server: http://127.0.0.1:5003/ventas is down
+[01:57:38]: Server: http://127.0.0.1:5002/ventas is up
+[01:58:05]: Server: http://127.0.0.1:5001/ventas is down
+[01:58:05]: Se cambio al servidor: http://127.0.0.1:5002
+[01:58:17]: Server: http://127.0.0.1:5003/ventas is up
+[01:58:25]: Server: http://127.0.0.1:5002/ventas is down
+[01:58:25]: Se cambio al servidor: http://127.0.0.1:5003
+[01:58:46]: Server: http://127.0.0.1:5001/ventas is up
+[01:58:46]: Se cambio el servidor: http://127.0.0.1:5001
+[01:59:32]: Server: http://127.0.0.1:5002/ventas is up
+[02:02:30]: Server: http://127.0.0.1:5001/ventas is down
+[02:02:30]: Se cambio al servidor: http://127.0.0.1:5002
+[02:02:36]: Server: http://127.0.0.1:5003/ventas is down
+[02:03:21]: Server: http://127.0.0.1:5001/ventas is up
+[02:03:21]: Se cambio el servidor: http://127.0.0.1:5001
+[02:04:46]: Server: http://127.0.0.1:5003/ventas is up
+[02:06:23]: Server: http://127.0.0.1:5002/ventas is down
+[02:09:00]: Server: http://127.0.0.1:5001/ventas is down
+[02:09:00]: Se cambio al servidor: http://127.0.0.1:5003
+[02:12:00]: Server: http://127.0.0.1:5002/ventas is up
+[02:12:00]: Se cambio el servidor: http://127.0.0.1:5002
+[02:14:11]: Server: http://127.0.0.1:5002/ventas is down
+[02:14:11]: Se cambio al servidor: http://127.0.0.1:5003
+[02:14:13]: Server: http://127.0.0.1:5001/ventas is up
+[02:14:13]: Se cambio el servidor: http://127.0.0.1:5001
+[02:14:50]: Server: http://127.0.0.1:5002/ventas is up
+[02:14:58]: Server: http://127.0.0.1:5003/ventas is down
+[02:15:06]: Server: http://127.0.0.1:5001/ventas is down
+[02:15:06]: Se cambio al servidor: http://127.0.0.1:5002
+[02:15:49]: Server: http://127.0.0.1:5003/ventas is up
+[02:15:51]: Server: http://127.0.0.1:5001/ventas is up
+[02:15:51]: Se cambio el servidor: http://127.0.0.1:5001
+[02:16:00]: Server: http://127.0.0.1:5002/ventas is down
+[02:16:12]: Server: http://127.0.0.1:5001/ventas is down
+[02:16:12]: Se cambio al servidor: http://127.0.0.1:5003
+[02:16:37]: Server: http://127.0.0.1:5002/ventas is up
+[02:16:37]: Se cambio el servidor: http://127.0.0.1:5002
+[02:19:56]: Server: http://127.0.0.1:5002/ventas is down
+[02:19:56]: Se cambio al servidor: http://127.0.0.1:5003
+[02:20:17]: Server: http://127.0.0.1:5001/ventas is up
+[02:20:17]: Se cambio el servidor: http://127.0.0.1:5001
+[02:24:01]: Server: http://127.0.0.1:5001/ventas is down
+[02:24:01]: Se cambio al servidor: http://127.0.0.1:5003
+[02:24:01]: Server: http://127.0.0.1:5002/ventas is up
+[02:24:01]: Se cambio el servidor: http://127.0.0.1:5002
+[02:24:11]: Server: http://127.0.0.1:5002/ventas is down
+[02:24:11]: Se cambio al servidor: http://127.0.0.1:5003
+[02:24:26]: Server: http://127.0.0.1:5003/ventas is down
