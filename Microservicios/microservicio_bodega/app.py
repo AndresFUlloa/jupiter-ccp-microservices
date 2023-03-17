@@ -1,6 +1,6 @@
 from modelos.modelos import db, Producto, ProductoSchema, Entrada, EntradaSchema
 from flask_restful import Api
-from vistas.vistas import VistaProducto, VistaEntrada
+from vistas.vistas import VistaProducto, VistaEntrada, VistaActualizarVenta
 from flask import request
 from flask import Flask
 
@@ -19,3 +19,4 @@ db.create_all()
 api = Api(app)
 api.add_resource(VistaProducto, '/producto', '/producto/<int:id_producto>')
 api.add_resource(VistaEntrada, '/entrada')
+api.add_resource(VistaActualizarVenta, '/actualizar_venta/<int:venta_id>')
