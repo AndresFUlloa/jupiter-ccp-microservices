@@ -65,3 +65,15 @@ class VistaEntrada(Resource):
         return '', 200
 
 
+class VistaActualizarVenta(Resource):
+
+    def post(self, venta_id):
+        venta = Venta.query.get_or_404(venta_id)
+        producto = Producto.query.get_or_404(request.json['producto_id'])
+        producto.ventas.add(venta)
+        producto.stock -= venta.cantidad
+        db.session.commit()
+        return "", 200
+
+
+
