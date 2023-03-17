@@ -14,6 +14,11 @@ class TipoUsuario(Enum):
     INVENTARIO = 3
 
 
+class Miscroservicios(Enum):
+    VENTAS = 1
+    INVENTARIO = 2
+
+
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     usuario = db.Column(db.String(50))

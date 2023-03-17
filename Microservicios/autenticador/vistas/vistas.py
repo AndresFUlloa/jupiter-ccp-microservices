@@ -55,3 +55,24 @@ class VistaLogIn(Resource):
             "id": usuario.id,
             "tipo_usuario": usuario.tipo_usuario.value
         }, 200
+
+class VistaValidation(Resource):
+
+    @jwt_required()
+    def get(self, microservicio):
+        id_usuario = get_jwt_identity()
+        usuario = Usuario.query.get_or_404(id_usuario)
+
+        if usuario.tipo_usuario == TipoUsuario.VENDEDOR:
+            if Miscroservicios.INVENTARIO.value == microservicio:
+                return 'Usuario no tiene acceso', 403
+        elif usuario.tipo_usuario == TipoUsuario.INVENTARIO:
+            if Miscroservicios.VENTAS.value == microservicio:
+                return 'Usuario no tiene acceso', 403
+
+        return {
+            "mensaje": "Usuario valido",
+            "id": id_usuario,
+            "tipo_usuario": usuario.tipo_usuario.value,
+            "nombre_ususario": usuario.usuario
+        }, 200
