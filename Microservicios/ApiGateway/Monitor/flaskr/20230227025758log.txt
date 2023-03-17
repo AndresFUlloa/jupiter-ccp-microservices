@@ -1,0 +1,10 @@
+Inicio Log
+[02:58:54]: Server: http://127.0.0.1:5001/ventas is down
+[02:58:54]: Se cambio al servidor: http://127.0.0.1:5002
+[02:59:46]: Server: http://127.0.0.1:5002/ventas is down
+[02:59:46]: Se cambio al servidor: http://127.0.0.1:5003
+[03:00:21]: Server: http://127.0.0.1:5002/ventas is up
+[03:00:21]: Se cambio el servidor: http://127.0.0.1:5002
+[03:00:26]: Server: http://127.0.0.1:5003/ventas is down
+[03:01:13]: Server: http://127.0.0.1:5001/ventas is up
+[03:01:13]: Se cambio el servidor: http://127.0.0.1:5001
