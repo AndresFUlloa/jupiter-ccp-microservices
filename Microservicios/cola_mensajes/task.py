@@ -1,7 +1,8 @@
 import pika
 import json
+import requests
 
-connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+connection = pika.BlockingConnection(pika.URLParameters(('amqps://rxrfnebd:p2RNcqtzpqchcVfPZ2gKd-uyCX1Q3yM0@jackal.rmq.cloudamqp.com/rxrfnebd')))
 channel = connection.channel()
 
 queue = channel.queue_declare('inventario_notify')
@@ -19,7 +20,10 @@ channel.queue_bind(
     )
 def callback(ch, method, properties, body):
     payload=json.loads(body)
-    print(' [X] Notificando al Inventario ', payload)
+    print(payload)
+    encabezados = {'Content-Type':'application/json'}
+    response = requests.post('http://localhost:5008/actualizar_venta/' + str(payload['venta_id']), data=json.dumps(payload),headers=encabezados)
+    print(' [X] Notificando al Inventario ', payload, response)
     print(' [X] Done')
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
