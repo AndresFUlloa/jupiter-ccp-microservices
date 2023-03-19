@@ -1,3 +1,5 @@
+import json
+
 import flask
 import sqlalchemy
 from flask import request
@@ -51,7 +53,7 @@ class VistaVendedor(Resource):
         db.session.commit()
         return '', 200
 
-
+@jwt_required()
 class VistaVenta(Resource):
 
     def post(self, id_vendedor):
@@ -66,7 +68,14 @@ class VistaVenta(Resource):
         db.session.add(nueva_venta)
         db.session.add(vendedor)
         db.session.commit()
-        requests.post('http://127.0.0.1:5007/venta_inventario',json={'venta_id':nueva_venta.id, 'producto_id':request.json['producto_id']})
+        encabezados = {
+            'Content-Type': 'application/json',
+            "Authorization": request.headers.get('Authorization')
+        }
+        dict_dta = {
+            'venta_id': nueva_venta.id, 'producto_id': request.json['producto_id']
+        }
+        requests.post('http://127.0.0.1:5007/venta_inventario', data=json.dumps(dict_dta), headers=encabezados)
         return '', 200
 
     def put(self, id_venta):
