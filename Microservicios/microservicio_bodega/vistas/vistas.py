@@ -13,9 +13,15 @@ producto_schema = ProductoSchema()
 entrada_schema = EntradaSchema()
 data_factory = Faker()
 
-class VistaProducto(Resource):
+class VistaProductos(Resource):
+    @jwt_required()
+    def get(self):
+        return [producto_schema.dump(producto) for producto in Producto.query.all()]
 
+class VistaProducto(Resource):
+    @jwt_required()
     def post(self):
+        print(request.json)
         nuevo_producto = Producto(
             codigo=request.json['codigo'],
             descripcion=request.json['descripcion'],
@@ -39,7 +45,6 @@ class VistaProducto(Resource):
             'producto': producto_schema.dumps(nuevo_producto),
             'message': 'Producto Editado exitosamente' }, 200
 
-
     def delete(self, id_producto):
         producto = Producto.query.get_or_404(id_producto)
         db.session.delete(producto)
@@ -48,7 +53,6 @@ class VistaProducto(Resource):
 
     def get(self, id_producto):
         return producto_schema.dump(Producto.query.get_or_404(id_producto))
-
 
 class VistaEntrada(Resource):
 

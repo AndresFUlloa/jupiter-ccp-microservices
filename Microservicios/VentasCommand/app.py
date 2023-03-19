@@ -23,10 +23,10 @@ app_context.push()
 db.init_app(app)
 db.create_all()
 
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, resources={r"*": {"origins": "*"}}, origin=['*', 'http://0.0.0.0', 'http://localhost', 'http://127.0.0.1/', 'localhost'])
 
 api = Api(app)
 api.add_resource(VistaVenta, '/venta/<int:id_vendedor>')
 api.add_resource(VistaVendedor, '/vendedor', '/vendedor/<int:id_vendedor>')
 
-
+jwt = JWTManager(app)

@@ -3,7 +3,6 @@ from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from flask_restful import Api
 
-
 import modelos
 from modelos import db
 from vistas import VistaSignIn, VistaLogIn, VistaValidation
@@ -20,7 +19,7 @@ app_context.push()
 db.init_app(app)
 db.create_all()
 
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+cors = CORS(app, resources={r"*": {"origins": "*"}}, origin=['*', 'http://0.0.0.0', 'http://localhost', 'http://127.0.0.1/', 'localhost'])
 
 api = Api(app)
 api.add_resource(VistaSignIn, '/signin')
