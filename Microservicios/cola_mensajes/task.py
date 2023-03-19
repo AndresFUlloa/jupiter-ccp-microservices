@@ -21,8 +21,8 @@ channel.queue_bind(
 def callback(ch, method, properties, body):
     payload=json.loads(body)
     print(payload)
-    encabezados = {'Content-Type':'application/json'}
-    response = requests.post('http://localhost:5008/actualizar_venta/' + str(payload['venta_id']), data=json.dumps(payload),headers=encabezados)
+    encabezados = {'Content-Type':'application/json', 'Authorization':properties.headers.get('token', 'default-value')}
+    response = requests.post('http://localhost:5006/actualizar_venta/' + str(payload['venta_id']), data=json.dumps(payload),headers=encabezados)
     print(' [X] Notificando al Inventario ', payload, response)
     print(' [X] Done')
     ch.basic_ack(delivery_tag=method.delivery_tag)

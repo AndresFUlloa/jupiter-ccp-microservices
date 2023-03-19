@@ -9,10 +9,10 @@ import pika
 from cola_mensajes.utiles.exchange_util import ExchangeUtil
 
 class VistaVentaInventario(Resource):
-
+    @jwt_required()
     def post(self):
         ExchangeUtil.start_connection()
-        ExchangeUtil.send_message(request.json)
+        ExchangeUtil.send_message(request.json, request.headers.get('Authorization'))
         ExchangeUtil.close_connection()
         return 'Solicitud encolada', 200
 

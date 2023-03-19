@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_jwt_extended import JWTManager, jwt_required
 import requests
 import json
 
 
 app = Flask(__name__)
+app.config['JWT_SECRET_KEY'] = 'frase-secreta'
+jwt = JWTManager(app)
 
 # URL microservicio consulta principal
 URL = "http://127.0.0.1:5001"
@@ -58,7 +61,59 @@ def login():
     data = response.json()
     token = data['token']
     print(token)
-    return "", 200
+    return {'mensaje':'login exitoso:  ', 'token': token}, 200
+
+
+@jwt_required()
+@app.route('/api/crear_venta', methods=['POST'])
+def crear_venta():
+    encabezados = {
+        'Content-Type': 'application/json',
+        "Authorization": request.headers.get('Authorization')
+    }
+    response = requests.get('http://127.0.0.1:5008/validate/1', headers=encabezados)
+    if response.status_code != 200:
+        return response.text, response.status_code
+
+    data_post = request.json
+    response = requests.post(
+        'http://127.0.0.1:5000/venta/{}'.format(data_post['vendedor_id']),
+        data=json.dumps(data_post), headers=encabezados)
+
+    return response.text, response.status_code
+
+@jwt_required()
+@app.route('/api/crear_producto', methods=['POST'])
+def crear_producto():
+    encabezados = {
+        'Content-Type': 'application/json',
+        "Authorization": request.headers.get('Authorization')
+    }
+    response = requests.get('http://127.0.0.1:5008/validate/2', headers=encabezados)
+    if response.status_code != 200:
+        return response.text, response.status_code
+
+    data_post = request.json
+    response = requests.post('http://127.0.0.1:5006/producto', data=json.dumps(data_post), headers=encabezados)
+
+    return response.text, response.status_code
+
+
+@jwt_required()
+@app.route('/api/consultar_inventario', methods=['GET'])
+def consultar_inventario():
+    encabezados = {
+        'Content-Type': 'application/json',
+        "Authorization": request.headers.get('Authorization')
+    }
+    response = requests.get('http://127.0.0.1:5008/validate/2', headers=encabezados)
+    if response.status_code != 200:
+        return response.text, response.status_code
+
+    response = requests.get('http://127.0.0.1:5006/productos', headers=encabezados)
+
+    return json.dumps(response.json()), response.status_code
+
 
 if __name__ == '__main__':
     app.run(port=5001)
