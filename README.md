@@ -30,6 +30,9 @@ Sin embargo, se nota cierta latencia que podria afectar la disponibilidad en un 
 Los resultados del experimento se encuentran el archivo Log, ubicado en este repositorio: 
 https://github.com/AndresFUlloa/jupiter-ccp-microservices/blob/develop/Microservicios/ApiGateway/Monitor/flaskr/20230227012641log.txt: ![image](https://user-images.githubusercontent.com/111446386/221460123-dd7432ab-c8c5-4c48-b20f-3086486918f4.png)
 
+Video Demo del experimento:
+https://uniandes-my.sharepoint.com/:v:/g/personal/r_amin_uniandes_edu_co/EaQ17BfvsiVAni-grrS18kgBKTZvI8eHJf__Ys2-k4Ek8w?e=S144Jm
+
 Ambiente:
 1. El codigo esta desarrollado en Python 3.11 y se corrio en Windows 11
 2. Se anexa el requirements.txt con las librerias requeridas

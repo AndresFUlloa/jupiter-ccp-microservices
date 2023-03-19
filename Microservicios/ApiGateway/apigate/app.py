@@ -5,7 +5,6 @@ import json
 
 app = Flask(__name__)
 
-
 # URL microservicio consulta principal
 URL = "http://127.0.0.1:5001"
 
@@ -48,6 +47,19 @@ def valid_URL():
     print("El microservicio de consulta activo es el: " + URL)
     return "", 200
 
+
+# enrutamiento a login para controlar el acceso
+@app.route('/api/login', methods=['POST'])
+def login():
+    encabezados = {'Content-Type':'application/json'}
+    response = requests.post('http://127.0.0.1:5008/login', data=json.dumps(request.json), headers=encabezados)
+    if response.status_code != 200:
+        return "El usuario No existe", 404
+    data = response.json()
+    token = data['token']
+    print(token)
+    return "", 200
+
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5001)
 
