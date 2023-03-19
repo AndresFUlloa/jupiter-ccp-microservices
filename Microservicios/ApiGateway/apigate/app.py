@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_jwt_extended import JWTManager, jwt_required
 import requests
 import json
 
 
 app = Flask(__name__)
+app.config['JWT_SECRET_KEY'] = 'frase-secreta'
+jwt = JWTManager(app)
 
 # URL microservicio consulta principal
 URL = "http://127.0.0.1:5001"
@@ -59,6 +62,42 @@ def login():
     token = data['token']
     print(token)
     return "", 200
+
+
+@jwt_required()
+@app.route('/api/crear_venta', methods=['POST'])
+def crear_venta():
+    encabezados = {
+        'Content-Type': 'application/json',
+        "Authorization": request.headers.get('Authorization')
+    }
+    response = requests.get('http://127.0.0.1:5008/validate/1', headers=encabezados)
+    if response.status_code != 200:
+        return response.status_code, response.text
+
+    data_post = response.json()
+    response = requests.get(
+        'http://127.0.0.1:5007/venta/{}'.format(data_post['vendedor_id']),
+        data=json.dumps(data_post), headers=encabezados)
+
+    return response.status_code, response.text
+
+@jwt_required()
+@app.route('/api/crear_venta', methods=['POST'])
+def crear_producto():
+    encabezados = {
+        'Content-Type': 'application/json',
+        "Authorization": request.headers.get('Authorization')
+    }
+    response = requests.get('http://127.0.0.1:5008/validate/1', headers=encabezados)
+    if response.status_code != 200:
+        return response.status_code, response.text
+
+    data_post = response.json()
+    response = requests.get('http://127.0.0.1:5007/producto/', data=json.dumps(data_post), headers=encabezados)
+
+    return response.status_code, response.text
+
 
 if __name__ == '__main__':
     app.run(port=5001)

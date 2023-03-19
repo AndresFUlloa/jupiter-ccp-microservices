@@ -51,7 +51,7 @@ class VistaVendedor(Resource):
         db.session.commit()
         return '', 200
 
-
+@jwt_required()
 class VistaVenta(Resource):
 
     def post(self, id_vendedor):
