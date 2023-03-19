@@ -10,10 +10,6 @@ import requests
 
 from VentasCommand.modelos.modelos import *
 
-from celery import Celery
-
-#app_ventas = Celery('tasks', broker='pyamqp://guest@localhost//')
-
 vendedor_schema = VendedorSchema()
 venta_schema = VendedorSchema()
 data_factory = Faker()

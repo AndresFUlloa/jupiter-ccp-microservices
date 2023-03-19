@@ -69,8 +69,9 @@ class VistaActualizarVenta(Resource):
 
     def post(self, venta_id):
         venta = Venta.query.get_or_404(venta_id)
+        print(request)
         producto = Producto.query.get_or_404(request.json['producto_id'])
-        producto.ventas.add(venta)
+        producto.ventas.append(venta)
         producto.stock -= venta.cantidad
         db.session.commit()
         return "", 200

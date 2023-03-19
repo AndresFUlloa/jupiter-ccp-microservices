@@ -5,16 +5,14 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 from flask_restful import Resource
 from sqlalchemy.exc import IntegrityError
 from datetime import datetime
-from celery import Celery
-from cola_mensajes.task import process_request
-
-#app_ventas = Celery('task', broker='pyamqp://guest@localhost//')
+import pika
+from cola_mensajes.utiles.exchange_util import ExchangeUtil
 
 class VistaVentaInventario(Resource):
 
     def post(self):
-        print(request)
-        process_request.delay(request.json['producto_id'])
-
+        ExchangeUtil.start_connection()
+        ExchangeUtil.send_message(request.json)
+        ExchangeUtil.close_connection()
         return 'Solicitud encolada', 200
 
