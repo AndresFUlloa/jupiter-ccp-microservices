@@ -66,7 +66,7 @@ class VistaEntrada(Resource):
 
 
 class VistaActualizarVenta(Resource):
-
+    @jwt_required()
     def post(self, venta_id):
         venta = Venta.query.get_or_404(venta_id)
         print(request)
