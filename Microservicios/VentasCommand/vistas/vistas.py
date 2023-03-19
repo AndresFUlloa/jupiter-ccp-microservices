@@ -53,9 +53,9 @@ class VistaVendedor(Resource):
         db.session.commit()
         return '', 200
 
-@jwt_required()
-class VistaVenta(Resource):
 
+class VistaVenta(Resource):
+    @jwt_required()
     def post(self, id_vendedor):
         vendedor = Vendedor.query.get_or_404(id_vendedor)
         nueva_venta = Venta(

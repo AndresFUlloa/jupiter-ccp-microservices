@@ -18,11 +18,13 @@ class ExchangeUtil:
         )
 
     @staticmethod
-    def send_message(json_request):
+    def send_message(json_request, token):
+        headers = {'token':token}
         ver_publicacion=ExchangeUtil.channel.basic_publish(
             exchange='orden',
             routing_key='inventario.notify',
-            body = json.dumps(json_request)
+            body = json.dumps(json_request),
+            properties = pika.BasicProperties(headers=headers)
         )
         print(' [X] Notificacion enviada a la bodega de Jesus', ver_publicacion)
 
