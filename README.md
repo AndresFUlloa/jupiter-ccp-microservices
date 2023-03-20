@@ -42,12 +42,16 @@ Ambiente:
 2. Se anexa el requirements.txt con las librerias requeridas
 3. Se utilizo una unica base de datos para todos los microservicios
 4. Cada microservicio se corre en una terminal separada en puertos diferentes, se debe ubicar en cada directorio del microservicio y ejecutar de la siguiente forma:
-  Microservicio ventasCommand: flask run -p 5004
-  Microservicio microservicio_consul_1: flask run -p 5001
-  Microservicio microservicio_consul_2: flask run -p 5002
-  Microservicio microservicio_consul_3: flask run -p 5003
-  API Gateway apigate: flask run -p 5006
-  Monitor flaskr:      flask run -p 5000
+  
+  | microservicio | comando |
+  | --------------- | --------- |
+  | Microservicio ventasCommand: | flask run -p 5004 |
+  | Microservicio microservicio_consul_1: | flask run -p 5001 |
+  | Microservicio microservicio_consul_2: | flask run -p 5002 |
+  | Microservicio microservicio_consul_3: | flask run -p 5003 |
+  | API Gateway apigate: | flask run -p 5006 | 
+  | Monitor flaskr:      | flask run -p 5000 |
+  
   
 ### Tacticas de seguridad
 Creamos una arquitectura de microservicios con tácticas de:
@@ -66,11 +70,15 @@ Ambiente:
 1. El codigo esta desarrollado en Python 3.11 y se corrio en Windows 11
 2. Se utilizo una unica base de datos para todos los microservicios, y otra base de datos para el autenticador de usuarios
 3. Cada microservicio se corre en una terminal separada en puertos diferentes, se debe ubicar en cada directorio del microservicio y ejecutar de la siguiente forma:
-  Microservicio ventasCommand: flask run -p 5000
-  Microservicio Bodegar: flask run -p 5006
-  Microservicio Autenticador: flask run -p 5008
-  API Gateway apigate: flask run -p 5001
-  cola de mensajes:      flask run -p 5007
-  Archivo Task (tareas en directorio cola de mensajes):  python task.py
+  
+  | microservicio | comando |
+  | --------------- | --------- |
+  | Microservicio ventasCommand: | flask run -p 5000 |
+  | Microservicio Bodegar: | flask run -p 5006 |
+  | Microservicio Autenticador: | flask run -p 5008 |
+  | API Gateway apigate: | flask run -p 5001 |
+  | cola de mensajes:    | flask run -p 5007 |
+  | Archivo Task (tareas en directorio cola de mensajes): | python task.py |
+  
 4. La tabulacion de las pruebas y resultados se anexa en: https://uniandes-my.sharepoint.com/:x:/g/personal/r_amin_uniandes_edu_co/EZlYLVVI9mBOgRUx1Sp6GzcBy6qvoXCvTJSbPYNIPpQG_g?e=ZEjTEd&wdLOR=c212DE98C-A81F-48A5-BC90-30BD9BD92BF8
 
