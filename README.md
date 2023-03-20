@@ -26,7 +26,9 @@ tactica de redundancia activa impar, y cuando el microservicio afectado se recup
 las fallas al usuario, redireccionaba las peticiones al microservicio de consulta principal en nuestra arquitectura… 
 Esto permitio tanto detectar como enmascarar y ofrecer asi una disponibilidad superior al 90% que esperabamos en el experimento. 
 Sin embargo, se nota cierta latencia que podria afectar la disponibilidad en un momento dado.
-![diagrama_experimento](https://user-images.githubusercontent.com/111446386/221460027-0b737a8d-2090-4350-bb6b-ebf4d9e34946.jpg)
+
+
+![diagrama_experimento](https://user-images.githubusercontent.com/111446386/226238489-98f571ea-d8c1-4989-883c-451f0c17a738.jpg)
 
 
 Los resultados del experimento se encuentran el archivo Log, ubicado en este repositorio: 
@@ -55,7 +57,7 @@ Introducción de tokens de autorización (utilizando JWT) en los métodos de gen
 
 De esta forma, logramos una seguridad integral en nuestra aplicación, al No solo certificar a los usuarios (saber quienes son), sino además, establecer canales de comunicación seguros a través de tokens que permiten accesos únicamente a los usuarios habilitados con dichos permisos en nuestra arquitectura (Ej, Vendedor en modulo de ventas, y Bodeguero en modulo de Inventarios).  Esto permitio tanto detectar como habilitar permisos y ofrecer asi un control de acceso superior al 90% que esperabamos en el experimento. 
 
-![Diagrama experimento seguridad](https://user-images.githubusercontent.com/111446386/226237078-44563246-db37-49e9-8fa0-61309828484a.jpg)
+[![Diagrama experimento seguridad](https://user-images.githubusercontent.com/111446386/226237078-44563246-db37-49e9-8fa0-61309828484a.jpg)](https://uniandes-my.sharepoint.com/personal/r_amin_uniandes_edu_co/_layouts/15/stream.aspx?id=%2Fpersonal%2Fr%5Famin%5Funiandes%5Fedu%5Fco%2FDocuments%2FDemo%20experimento%20seguridad%2Emp4&wdLOR=c33D8B7B0%2DAE14%2D4E8D%2D9950%2D30354D6F3030&ga=1)
 
 Video Demo del experimento:
 Demo experimento seguridad.mp4![image](https://user-images.githubusercontent.com/111446386/226237148-42015168-bd47-4adc-9cf1-383a34217ac9.png)
